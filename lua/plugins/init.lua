@@ -207,7 +207,7 @@ return packer.startup(function(use)
       'nvim-lua/plenary.nvim',
     },
     config = function()
-      require 'plugins.config.neogit'
+      require 'plugins.config.neogit_cfg'
     end,
   })
 
