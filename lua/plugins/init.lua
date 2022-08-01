@@ -111,7 +111,6 @@ return packer.startup(function(use)
     config = function()
       require('surround').setup({ mappings_style = 'surround' })
     end,
-    event = 'BufEnter',
   })
 
   use({
@@ -126,7 +125,6 @@ return packer.startup(function(use)
     config = function()
       require('Comment').setup()
     end,
-    event = 'BufEnter',
   })
 
   use({
@@ -142,7 +140,6 @@ return packer.startup(function(use)
     config = function()
       require('hop').setup()
     end,
-    event = 'BufEnter',
   })
 
   use({
@@ -150,7 +147,6 @@ return packer.startup(function(use)
     config = function()
       require 'plugins.config.nest'
     end,
-    event = 'VimEnter',
   })
 
   -- LSP
@@ -165,7 +161,6 @@ return packer.startup(function(use)
     config = function()
       require('fidget').setup()
     end,
-    event = 'BufReadPre',
   })
 
   use({
@@ -187,7 +182,6 @@ return packer.startup(function(use)
     config = function()
       require 'plugins.config.telescope'
     end,
-    event = 'BufEnter',
   })
 
   -- Treesitter
@@ -230,6 +224,6 @@ return packer.startup(function(use)
   })
 
   if PACKER_BOOTSTRAP then
-    require('packer').sync()
+    packer.sync()
   end
 end)

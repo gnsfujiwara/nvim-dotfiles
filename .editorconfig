@@ -2,9 +2,11 @@
 
 root = true
 
-[*.lua]
+[*]
 end_of_line = lf
 charset = utf-8
+
+[*.lua]
 trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2

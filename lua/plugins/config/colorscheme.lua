@@ -6,8 +6,6 @@ end
 
 onedark.setup({
   style = 'darker',
-  toggle_style_key = '<leader>ts',
-  toggle_style_list = { 'darker' },
   code_style = {
     comments = 'italic',
     keywords = 'none',
@@ -22,4 +20,8 @@ onedark.setup({
   },
 })
 
-onedark.load()
+-- Setup colorscheme
+local ok, _ = pcall(vim.cmd, 'colorscheme onedark')
+if not ok then
+  vim.cmd 'colorscheme default'
+end

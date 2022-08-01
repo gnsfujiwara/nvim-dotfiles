@@ -15,13 +15,14 @@ local servers = {
 -- nvim-lsp-installer setup
 lspinstaller.setup({
   ui = {
+    border = 'rounded',
     icons = {
       server_installed = '✓',
       server_pending = '➜',
       server_uninstalled = '✗',
     },
   },
-  ensure_installed = servers,
+  automatic_installation = true,
 })
 
 -- LSP setup
