@@ -5,6 +5,7 @@ if not tscfg_ok then
 end
 
 local parsers = {
+  'c',
   'python',
   'bash',
   'rust',

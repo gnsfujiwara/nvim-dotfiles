@@ -15,7 +15,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Protected call
 local packer_ok, packer = pcall(require, 'packer')
 if not packer_ok then
   return
@@ -55,7 +54,7 @@ return packer.startup(function(use)
 
   -- Look and feel
   use({
-    'navarasu/onedark.nvim',
+    'shaeinst/roshnivim-cs',
     config = function()
       require 'plugins.config.colorscheme'
     end,
@@ -222,6 +221,8 @@ return packer.startup(function(use)
       require('gitsigns').setup()
     end,
   })
+
+  -- Language support
 
   if PACKER_BOOTSTRAP then
     packer.sync()

@@ -5,6 +5,7 @@ end
 
 -- Language servers list
 local servers = {
+  'clangd',
   'rust_analyzer',
   'pyright',
   'sumneko_lua',
