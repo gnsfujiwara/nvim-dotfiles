@@ -64,3 +64,6 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- Providers
+vim.g.python3_host_prog = 'python'

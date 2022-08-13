@@ -92,4 +92,13 @@ nest.applyKeymaps({
       { 'c', '<Cmd>Neogit commit kind=split<CR>' },
     },
   },
+
+  -- toggleterm.nvim
+  {
+    't',
+    {
+      { 't', '<Cmd>ToggleTerm<CR>' },
+      { 'f', '<Cmd>ToggleTerm direction=float<CR>' },
+    },
+  },
 })

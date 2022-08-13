@@ -54,7 +54,7 @@ return packer.startup(function(use)
 
   -- Look and feel
   use({
-    'shaeinst/roshnivim-cs',
+    'navarasu/onedark.nvim',
     config = function()
       require 'plugins.config.colorscheme'
     end,
@@ -153,8 +153,6 @@ return packer.startup(function(use)
 
   use 'williamboman/nvim-lsp-installer'
 
-  use 'nvim-lua/lsp-status.nvim'
-
   use({
     'j-hui/fidget.nvim',
     config = function()
@@ -166,7 +164,7 @@ return packer.startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins.config.trouble'
+      require('trouble').setup()
     end,
   })
 
@@ -190,7 +188,7 @@ return packer.startup(function(use)
     config = function()
       require 'plugins.config.treesitter'
     end,
-    event = 'BufEnter',
+    event = 'BufRead',
   })
 
   -- Git
@@ -200,7 +198,7 @@ return packer.startup(function(use)
       'nvim-lua/plenary.nvim',
     },
     config = function()
-      require 'plugins.config.neogit_cfg'
+      require 'plugins.config.neogit'
     end,
   })
 

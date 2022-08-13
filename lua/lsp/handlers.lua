@@ -64,8 +64,6 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-
-  -- trouble.nvim keymaps
 end
 
 M.on_attach = function(client, bufnr)

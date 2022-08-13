@@ -1,12 +1,14 @@
---
--- gnsfujiwara's neovim configuration
---
+--[[
 
--- Copyright (C) Gustavo Vinícios de Souza
--- Author: Gustavo Vinícios de Souza <gnsfujiwara@disroot.org>
--- URL: https://github.com/gnsfujiwara/nvim-dotfiles
--- This file is not part of neovim.
--- This file is free software.
+gnsfujiwara's neovim configuration
+
+Copyright (C) Gustavo Vinícios de Souza
+Author: Gustavo Vinícios de Souza <gnsfujiwara@disroot.org>
+URL: https://github.com/gnsfujiwara/nvim-dotfiles
+This file is not part of neovim.
+This file is free software.
+
+--]]
 
 -- impatient.nvim setup
 local impatient_ok, impatient = pcall(require, 'impatient')
@@ -25,3 +27,6 @@ require 'plugins'
 
 -- LSP
 require 'lsp'
+
+-- Autocommands
+require 'autocommands'

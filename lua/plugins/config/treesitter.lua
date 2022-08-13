@@ -6,12 +6,15 @@ end
 
 local parsers = {
   'c',
+  'cpp',
   'python',
   'bash',
   'rust',
   'lua',
   'markdown',
   'yaml',
+  'go',
+  'gomod',
 }
 
 ts_config.setup({
