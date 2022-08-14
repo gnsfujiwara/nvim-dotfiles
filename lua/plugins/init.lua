@@ -72,10 +72,10 @@ return packer.startup(function(use)
   })
 
   use({
-    'akinsho/bufferline.nvim',
+    'romgrk/barbar.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins.config.bufferline'
+      require 'plugins.config.barbar'
     end,
   })
 
