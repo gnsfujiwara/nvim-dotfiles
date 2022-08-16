@@ -1,23 +1,10 @@
 -- nvim-treesitter setup
-local tscfg_ok, ts_config = pcall(require, 'nvim-treesitter.configs')
-if not tscfg_ok then
+local ok, _ = pcall(require, 'nvim-treesitter')
+if not ok then
   return
 end
 
-local parsers = {
-  'c',
-  'cpp',
-  'python',
-  'bash',
-  'rust',
-  'lua',
-  'markdown',
-  'yaml',
-  'go',
-  'gomod',
-}
-
-ts_config.setup({
+require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
@@ -25,5 +12,16 @@ ts_config.setup({
     enable = true,
     disable = { 'python' },
   },
-  ensure_installed = parsers,
+  ensure_installed = {
+    'c',
+    'cpp',
+    'python',
+    'bash',
+    'rust',
+    'lua',
+    'markdown',
+    'yaml',
+    'go',
+    'gomod',
+  },
 })

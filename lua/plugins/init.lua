@@ -188,7 +188,7 @@ return packer.startup(function(use)
     config = function()
       require 'plugins.config.treesitter'
     end,
-    event = 'BufRead',
+    event = 'BufReadPre',
   })
 
   -- Git
