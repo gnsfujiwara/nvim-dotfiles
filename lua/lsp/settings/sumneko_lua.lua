@@ -23,7 +23,7 @@ return {
           quote_style = 'single',
           call_arg_parentheses = 'unambiguous_remove_string_only',
         },
-      }
+      },
     },
   },
 }
