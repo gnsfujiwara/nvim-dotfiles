@@ -83,6 +83,8 @@ return packer.startup(function(use)
 
   use 'folke/lsp-colors.nvim'
 
+  use 'kyazdani42/nvim-web-devicons'
+
   -- Completion
   use({
     'hrsh7th/nvim-cmp',
