@@ -5,9 +5,9 @@ if not onedark_ok then
 end
 
 onedark.setup({
-  style = 'darker',
+  style = 'dark',
   code_style = {
-    functions = 'italic',
+    -- functions = 'italic',
   },
 })
 
