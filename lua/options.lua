@@ -1,10 +1,5 @@
 -- nvim setup
 local options = {
-  -- Performance
-  ttyfast = true,
-  lazyredraw = true,
-  hidden = true,
-
   -- Interface
   termguicolors = true,
   number = true,
@@ -19,6 +14,7 @@ local options = {
   showmode = false,
   splitbelow = true,
   splitright = true,
+  lazyredraw = true,
 
   -- Indentation
   tabstop = 4,
@@ -35,18 +31,12 @@ local options = {
   incsearch = true,
   ignorecase = true,
   smartcase = true,
+  wildignorecase = true,
 
   -- Folding
   foldmethod = 'expr',
   foldexpr = 'nvim_treesitter#foldexpr()',
   foldlevelstart = 99,
-
-  -- Wild settings
-  wildmenu = true,
-  wildignorecase = true,
-
-  -- Encoding
-  encoding = 'utf-8',
 
   -- Backup/Swap
   backup = false,

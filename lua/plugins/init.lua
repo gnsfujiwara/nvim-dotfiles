@@ -24,7 +24,10 @@ end
 vim.api.nvim_create_autocmd('BufWritePost', {
   group = vim.api.nvim_create_augroup('PackerUserConfig', { clear = true }),
   pattern = '*/plugins/init.lua',
-  command = 'source <afile> | PackerCompile profile=true',
+  callback = function()
+    vim.cmd 'source <afile>'
+    vim.cmd 'PackerCompile profile=true'
+  end,
 })
 
 -- packer.nvim setup
@@ -37,7 +40,7 @@ packer.init({
     open_fn = function()
       return require('packer.util').float({ border = 'rounded' })
     end,
-    prompt_border = 'single',
+    prompt_border = 'rounded',
   },
   max_jobs = 50,
   git = { clone_timeout = 600 },
