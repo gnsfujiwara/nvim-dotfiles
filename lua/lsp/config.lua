@@ -7,7 +7,7 @@ end
 local servers = {
   'clangd',
   'rust_analyzer',
-  'pylsp',
+  'pyright',
   'sumneko_lua',
   'vimls',
   'bashls',
@@ -38,8 +38,6 @@ local lspconfig = require 'lspconfig'
 for _, lsp in ipairs(servers) do
   if lsp == 'sumneko_lua' then
     lspconfig.sumneko_lua.setup(vim.tbl_deep_extend('force', require 'lsp.settings.sumneko_lua', defaults))
-  elseif lsp == 'pylsp' then
-    lspconfig.pylsp.setup(vim.tbl_deep_extend('force', require 'lsp.settings.pylsp', defaults))
   else
     lspconfig[lsp].setup(defaults)
   end

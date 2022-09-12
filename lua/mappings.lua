@@ -2,8 +2,8 @@
 local opts = { silent = true, noremap = true }
 
 -- Leader key
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Turn off arrow keys
 vim.keymap.set('n', '<UP>', '<NOP>', opts)

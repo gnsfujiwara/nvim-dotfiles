@@ -189,11 +189,19 @@ return packer.startup(function(use)
   -- Treesitter
   use({
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+    requires = {
+      'p00f/nvim-ts-rainbow',
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      cond = function()
+        pcall(require, 'nvim-treesitter')
+      end,
+    },
+    run = function()
+      require('nvim-treesitter.install').update({ with_sync = true })
+    end,
     config = function()
       require 'plugins.config.treesitter'
     end,
-    event = 'BufReadPre',
   })
 
   -- Git
