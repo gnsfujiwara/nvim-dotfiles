@@ -3,7 +3,7 @@ local options = {
   -- Interface
   termguicolors = true,
   number = true,
-  relativenumber = true,
+  relativenumber = false,
   wrap = false,
   title = true,
   cursorline = true,

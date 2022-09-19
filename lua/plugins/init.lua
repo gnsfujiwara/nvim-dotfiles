@@ -64,6 +64,13 @@ return packer.startup(function(use)
   })
 
   use({
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require 'plugins.config.indent_blankline'
+    end,
+  })
+
+  use({
     'nvim-lualine/lualine.nvim',
     requires = {
       'kyazdani42/nvim-web-devicons',
@@ -75,11 +82,19 @@ return packer.startup(function(use)
   })
 
   use({
-    'romgrk/barbar.nvim',
+    'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
+    tag = 'v2.*',
     config = function()
-      require 'plugins.config.barbar'
+      require 'plugins.config.bufferline'
     end,
+  })
+
+  use({
+    'goolord/alpha-nvim',
+    config = function()
+      require('alpha').setup(require('alpha.themes.startify').config)
+    end
   })
 
   use 'onsails/lspkind.nvim'
@@ -111,16 +126,16 @@ return packer.startup(function(use)
   use 'gpanders/editorconfig.nvim'
 
   use({
-    'ur4ltz/surround.nvim',
+    'kylechui/nvim-surround',
     config = function()
-      require('surround').setup({ mappings_style = 'surround' })
-    end,
+      require('nvim-surround').setup()
+    end
   })
 
   use({
     'windwp/nvim-autopairs',
     config = function()
-      require('nvim-autopairs').setup()
+      require 'plugins.config.autopairs'
     end,
   })
 
@@ -138,11 +153,11 @@ return packer.startup(function(use)
     end,
   })
 
-  -- Navigation
   use({
-    'phaazon/hop.nvim',
+    'kyazdani42/nvim-tree.lua',
+    require = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('hop').setup()
+      require 'plugins.config.nvim_tree'
     end,
   })
 
@@ -150,6 +165,14 @@ return packer.startup(function(use)
     'LionC/nest.nvim',
     config = function()
       require 'plugins.config.nest'
+    end,
+  })
+
+  -- Navigation
+  use({
+    'phaazon/hop.nvim',
+    config = function()
+      require('hop').setup()
     end,
   })
 
@@ -179,6 +202,7 @@ return packer.startup(function(use)
     requires = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-telescope/telescope-frecency.nvim', requires = 'kkharji/sqlite.lua' },
       'nvim-telescope/telescope-file-browser.nvim',
     },
     config = function()
@@ -192,9 +216,6 @@ return packer.startup(function(use)
     requires = {
       'p00f/nvim-ts-rainbow',
       'nvim-treesitter/nvim-treesitter-textobjects',
-      cond = function()
-        pcall(require, 'nvim-treesitter')
-      end,
     },
     run = function()
       require('nvim-treesitter.install').update({ with_sync = true })

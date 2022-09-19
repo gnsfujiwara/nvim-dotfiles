@@ -1,26 +1,27 @@
 -- General keybindings
 local opts = { silent = true, noremap = true }
+local map = vim.keymap.set
 
 -- Leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Turn off arrow keys
-vim.keymap.set('n', '<UP>', '<NOP>', opts)
-vim.keymap.set('n', '<DOWN>', '<NOP>', opts)
-vim.keymap.set('n', '<LEFT>', '<NOP>', opts)
-vim.keymap.set('n', '<RIGHT>', '<NOP>', opts)
+map('n', '<UP>', '<NOP>', opts)
+map('n', '<DOWN>', '<NOP>', opts)
+map('n', '<LEFT>', '<NOP>', opts)
+map('n', '<RIGHT>', '<NOP>', opts)
 
-vim.keymap.set('i', '<UP>', '<NOP>', opts)
-vim.keymap.set('i', '<DOWN>', '<NOP>', opts)
-vim.keymap.set('i', '<LEFT>', '<NOP>', opts)
-vim.keymap.set('i', '<RIGHT>', '<NOP>', opts)
+map('i', '<UP>', '<NOP>', opts)
+map('i', '<DOWN>', '<NOP>', opts)
+map('i', '<LEFT>', '<NOP>', opts)
+map('i', '<RIGHT>', '<NOP>', opts)
 
-vim.keymap.set('v', '<UP>', '<NOP>', opts)
-vim.keymap.set('v', '<DOWN>', '<NOP>', opts)
-vim.keymap.set('v', '<LEFT>', '<NOP>', opts)
-vim.keymap.set('v', '<RIGHT>', '<NOP>', opts)
+map('v', '<UP>', '<NOP>', opts)
+map('v', '<DOWN>', '<NOP>', opts)
+map('v', '<LEFT>', '<NOP>', opts)
+map('v', '<RIGHT>', '<NOP>', opts)
 
 -- Cycle buffers
-vim.keymap.set('n', '<Tab>', '<Cmd>bnext<CR>', opts)
-vim.keymap.set('n', '<S-Tab>', '<Cmd>bprevious<CR>', opts)
+map('n', '<Tab>', '<Cmd>bnext<CR>', opts)
+map('n', '<S-Tab>', '<Cmd>bprevious<CR>', opts)

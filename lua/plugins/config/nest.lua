@@ -15,15 +15,15 @@ nest.applyKeymaps({
       { 'c', '<Cmd>close<CR>' },
       { 'w', '<Cmd>bd!<CR>' },
       { 'D', '<Cmd>%bd|e#|bd#<CR>' },
-      { '1', '<Cmd>BufferGoto 1<CR>' },
-      { '2', '<Cmd>BufferGoto 2<CR>' },
-      { '3', '<Cmd>BufferGoto 3<CR>' },
-      { '4', '<Cmd>BufferGoto 4<CR>' },
-      { '5', '<Cmd>BufferGoto 5<CR>' },
-      { '6', '<Cmd>BufferGoto 6<CR>' },
-      { '7', '<Cmd>BufferGoto 7<CR>' },
-      { '8', '<Cmd>BufferGoto 8<CR>' },
-      { '9', '<Cmd>BufferGoto 9<CR>' },
+      { '1', '<Cmd>BufferLineGoToBuffer 1<CR>' },
+      { '2', '<Cmd>BufferLineGoToBuffer 2<CR>' },
+      { '3', '<Cmd>BufferLineGoToBuffer 3<CR>' },
+      { '4', '<Cmd>BufferLineGoToBuffer 4<CR>' },
+      { '5', '<Cmd>BufferLineGoToBuffer 5<CR>' },
+      { '6', '<Cmd>BufferLineGoToBuffer 6<CR>' },
+      { '7', '<Cmd>BufferLineGoToBuffer 7<CR>' },
+      { '8', '<Cmd>BufferLineGoToBuffer 8<CR>' },
+      { '9', '<Cmd>BufferLineGoToBuffer 9<CR>' },
     },
   },
 
@@ -80,6 +80,7 @@ nest.applyKeymaps({
       { 'e', '<Cmd>Telescope file_browser<CR>' },
       { 'g', '<Cmd>Telescope live_grep<CR>' },
       { 'b', '<Cmd>Telescope buffers<CR>' },
+      { 'r', '<Cmd>Telescope frecency<CR>' },
       { 'h', '<Cmd>Telescope help_tags<CR>' },
     },
   },
@@ -101,4 +102,15 @@ nest.applyKeymaps({
       { 'f', '<Cmd>ToggleTerm direction=float<CR>' },
     },
   },
+
+  -- nvim-tree.lua
+  {
+    'n',
+    {
+      { 't', '<Cmd>NvimTreeToggle<CR>' },
+      { 'f', '<Cmd>NvimTreeFocus<CR>' },
+      { 's', '<Cmd>NvimTreeFindFile<CR>' },
+      { 'c', '<Cmd>NvimTreeCollapse<CR>' },
+    }
+  }
 })
