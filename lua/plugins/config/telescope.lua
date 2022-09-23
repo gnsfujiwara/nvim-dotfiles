@@ -45,7 +45,7 @@ telescope.setup({
   },
 })
 
--- Load extensions
+-- Extensions
 telescope.load_extension 'file_browser'
 telescope.load_extension 'fzf'
 telescope.load_extension 'frecency'

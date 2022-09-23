@@ -15,6 +15,7 @@ local options = {
   splitbelow = true,
   splitright = true,
   lazyredraw = true,
+  timeoutlen= 250,
 
   -- Indentation
   tabstop = 4,

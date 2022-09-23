@@ -91,10 +91,18 @@ return packer.startup(function(use)
   })
 
   use({
-    'goolord/alpha-nvim',
+    'glepnir/dashboard-nvim',
     config = function()
-      require('alpha').setup(require('alpha.themes.startify').config)
-    end
+      require 'plugins.config.dashboard'
+    end,
+  })
+
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require 'plugins.config.null_ls'
+    end,
   })
 
   use 'onsails/lspkind.nvim'
@@ -129,7 +137,7 @@ return packer.startup(function(use)
     'kylechui/nvim-surround',
     config = function()
       require('nvim-surround').setup()
-    end
+    end,
   })
 
   use({
@@ -162,9 +170,17 @@ return packer.startup(function(use)
   })
 
   use({
-    'LionC/nest.nvim',
+    'folke/which-key.nvim',
     config = function()
-      require 'plugins.config.nest'
+      require 'plugins.config.which_key'
+    end,
+  })
+
+  use({
+    'folke/persistence.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require 'plugins.config.persistence_nvim'
     end,
   })
 
