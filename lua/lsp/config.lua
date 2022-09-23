@@ -1,5 +1,5 @@
-local lspinstaller_ok, lspinstaller = pcall(require, 'nvim-lsp-installer')
-if not lspinstaller_ok then
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if not mason_lspconfig_ok then
   return
 end
 
@@ -14,20 +14,11 @@ local servers = {
   'gopls',
 }
 
--- nvim-lsp-installer setup
-lspinstaller.setup({
-  ui = {
-    border = 'rounded',
-    icons = {
-      server_installed = '✓',
-      server_pending = '⟳',
-      server_uninstalled = '✗',
-    },
-  },
-  automatic_installation = true,
+-- mason-lspconfig.nvim setup
+mason_lspconfig.setup({
+  ensure_installed = servers,
 })
 
--- LSP setup
 local defaults = {
   on_attach = require('lsp.handlers').on_attach,
   capabilities = require('lsp.handlers').capabilities,
@@ -35,10 +26,11 @@ local defaults = {
 
 local lspconfig = require 'lspconfig'
 
-for _, lsp in ipairs(servers) do
-  if lsp == 'sumneko_lua' then
+mason_lspconfig.setup_handlers({
+  function(server_name)
+    lspconfig[server_name].setup(defaults)
+  end,
+  ['sumneko_lua'] = function()
     lspconfig.sumneko_lua.setup(vim.tbl_deep_extend('force', require 'lsp.settings.sumneko_lua', defaults))
-  else
-    lspconfig[lsp].setup(defaults)
-  end
-end
+  end,
+})

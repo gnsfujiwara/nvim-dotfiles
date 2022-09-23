@@ -195,8 +195,6 @@ return packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
 
-  use 'williamboman/nvim-lsp-installer'
-
   use({
     'j-hui/fidget.nvim',
     config = function()
@@ -211,6 +209,18 @@ return packer.startup(function(use)
       require('trouble').setup()
     end,
   })
+
+  -- Mason
+  use({
+    'williamboman/mason.nvim',
+    config = function()
+      require 'plugins.config.mason'
+    end,
+  })
+
+  use 'williamboman/mason-lspconfig.nvim'
+
+  use 'jayp0521/mason-null-ls.nvim'
 
   -- Telescope
   use({

@@ -12,6 +12,6 @@ nvim_tree.setup({
       warning = '',
       hint = '',
       info = '',
-    }
+    },
   },
 })
