@@ -80,24 +80,11 @@ which_key.register({
   },
   s = {
     name = 'Session',
-    l = {
-      function()
-        require('persistence').load({ last = true })
-      end,
-      'Restore last session',
-    },
-    d = {
-      function()
-        require('persistence').load()
-      end,
-      'Restore last session for current directory',
-    },
-    n = {
-      function()
-        require('persistence').stop()
-      end,
-      "Don't save session on exit",
-    },
+    s = { '<Cmd>SessionManager save_current_session<CR>', 'Save current session' },
+    l = { '<Cmd>SessionManager load_last_session<CR>', 'Load last session' },
+    d = { '<Cmd>SessionManager load_current_dir_session<CR>', 'Load current dir session' },
+    r = { '<Cmd>SessionManager delete_session<CR>', 'Delete session' },
+    o = { '<Cmd>SessionManager load_session<CR>', 'Load session' },
   },
 }, { prefix = '<leader>', mode = 'n' })
 

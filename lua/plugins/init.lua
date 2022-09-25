@@ -177,10 +177,10 @@ return packer.startup(function(use)
   })
 
   use({
-    'folke/persistence.nvim',
+    'Shatur/neovim-session-manager',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
-      require 'plugins.config.persistence_nvim'
+      require 'plugins.config.session_manager'
     end,
   })
 

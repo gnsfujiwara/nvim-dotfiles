@@ -36,9 +36,7 @@ dashboard.custom_center = {
     icon = 'ﮦ  ',
     desc = 'Restore last session                   ',
     shortcut = 'SPC s l',
-    action = function()
-      require('persistence').load({ last = true })
-    end,
+    action = 'SessionManager load_last_session',
   },
   {
     icon = '  ',
